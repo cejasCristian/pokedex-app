@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+.container {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: auto;
+  margin-top: 3rem;
+}
+
+.cards-container {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+  width: 60rem;
+  height: 28rem;
+  background-color: black;
+  border-color: green;
+  border-style: inherit;
+}
+
+img {
+  height: 25rem;
+}
+
+.img-container {
+  order: 1;
+  width: 30rem;
+  text-align: center;
+  justify-content: center;
+}
+.data-container {
+  order: 2;
+  width: 15rem;
+  padding-left: 10rem;
+}
+
+.poke-info {
+  width: 10rem;
+  height: 2rem;
+  border-radius: 1rem;
+  background: rgba(135, 168, 113, 1);
+  background: -moz-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(135, 168, 113, 1) 0%,
+    rgba(79, 213, 52, 1) 74%,
+    rgba(79, 213, 52, 1) 100%
+  );
+  background: -webkit-gradient(
+    radial,
+    center center,
+    0px,
+    center center,
+    100%,
+    color-stop(0%, rgba(135, 168, 113, 1)),
+    color-stop(74%, rgba(79, 213, 52, 1)),
+    color-stop(100%, rgba(79, 213, 52, 1))
+  );
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(135, 168, 113, 1) 0%,
+    rgba(79, 213, 52, 1) 74%,
+    rgba(79, 213, 52, 1) 100%
+  );
+  background: -o-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(135, 168, 113, 1) 0%,
+    rgba(79, 213, 52, 1) 74%,
+    rgba(79, 213, 52, 1) 100%
+  );
+  background: -ms-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(135, 168, 113, 1) 0%,
+    rgba(79, 213, 52, 1) 74%,
+    rgba(79, 213, 52, 1) 100%
+  );
+  background: radial-gradient(
+    ellipse at center,
+    rgba(135, 168, 113, 1) 0%,
+    rgba(79, 213, 52, 1) 74%,
+    rgba(79, 213, 52, 1) 100%
+  );
+  color: #ffffff;
+  text-align: start;
+}
+
+.poke-info p {
+  padding-top: 0.4rem;
+  padding-left: 0.5rem;
+}
