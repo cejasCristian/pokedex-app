@@ -1,6 +1,7 @@
 header.MuiAppBar-colorPrimary {
   background-color: #000000;
   color: #ffffff;
+  padding: 0;
 }
 
 input.makeStyles-inputInput-6 {
@@ -9,8 +10,131 @@ input.makeStyles-inputInput-6 {
 
 img#pokeball {
   height: 2.2rem;
+  transition: 0.8s all;
 }
 
 img#pokelogo {
   height: 5rem;
+}
+
+img#pokeball:hover {
+  transform: rotate(360deg);
+}
+
+div.MuiInputBase-root {
+  background: rgba(73, 155, 234, 1);
+  background: -moz-linear-gradient(
+    top,
+    rgba(73, 155, 234, 1) 0%,
+    rgba(10, 21, 32, 1) 82%,
+    rgba(7, 15, 22, 1) 86%,
+    rgba(0, 0, 0, 1) 95%
+  );
+  background: -webkit-gradient(
+    left top,
+    left bottom,
+    color-stop(0%, rgba(73, 155, 234, 1)),
+    color-stop(82%, rgba(10, 21, 32, 1)),
+    color-stop(86%, rgba(7, 15, 22, 1)),
+    color-stop(95%, rgba(0, 0, 0, 1))
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(73, 155, 234, 1) 0%,
+    rgba(10, 21, 32, 1) 82%,
+    rgba(7, 15, 22, 1) 86%,
+    rgba(0, 0, 0, 1) 95%
+  );
+  background: -o-linear-gradient(
+    top,
+    rgba(73, 155, 234, 1) 0%,
+    rgba(10, 21, 32, 1) 82%,
+    rgba(7, 15, 22, 1) 86%,
+    rgba(0, 0, 0, 1) 95%
+  );
+  background: -ms-linear-gradient(
+    top,
+    rgba(73, 155, 234, 1) 0%,
+    rgba(10, 21, 32, 1) 82%,
+    rgba(7, 15, 22, 1) 86%,
+    rgba(0, 0, 0, 1) 95%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(73, 155, 234, 1) 0%,
+    rgba(10, 21, 32, 1) 82%,
+    rgba(7, 15, 22, 1) 86%,
+    rgba(0, 0, 0, 1) 95%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#000000', GradientType=0 );
+}
+
+label#combo-box-demo-label.MuiFormLabel-root {
+  color: whitesmoke;
+  border-color: white;
+}
+label#combo-box-demo-label.MuiFormLabel-root:hover {
+  color: #ffffff;
+  border-color: white;
+}
+
+fieldset.PrivateNotchedOutline-root-7.MuiOutlinedInput-notchedOutline.MuiOutlinedInput-notchedOutline {
+  border-color: transparent;
+}
+
+input#combo-box-demo {
+  color: #ffffff;
+}
+
+.MuiAutocomplete-listbox {
+  color: #ffffff;
+  background: rgba(0, 0, 0, 1);
+  background: -moz-linear-gradient(
+    top,
+    rgba(0, 0, 0, 1) 54%,
+    rgba(31, 66, 100, 1) 69%,
+    rgba(46, 97, 147, 1) 76%,
+    rgba(73, 155, 234, 1) 89%
+  );
+  background: -webkit-gradient(
+    left top,
+    left bottom,
+    color-stop(54%, rgba(0, 0, 0, 1)),
+    color-stop(69%, rgba(31, 66, 100, 1)),
+    color-stop(76%, rgba(46, 97, 147, 1)),
+    color-stop(89%, rgba(73, 155, 234, 1))
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 1) 54%,
+    rgba(31, 66, 100, 1) 69%,
+    rgba(46, 97, 147, 1) 76%,
+    rgba(73, 155, 234, 1) 89%
+  );
+  background: -o-linear-gradient(
+    top,
+    rgba(0, 0, 0, 1) 54%,
+    rgba(31, 66, 100, 1) 69%,
+    rgba(46, 97, 147, 1) 76%,
+    rgba(73, 155, 234, 1) 89%
+  );
+  background: -ms-linear-gradient(
+    top,
+    rgba(0, 0, 0, 1) 54%,
+    rgba(31, 66, 100, 1) 69%,
+    rgba(46, 97, 147, 1) 76%,
+    rgba(73, 155, 234, 1) 89%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 54%,
+    rgba(31, 66, 100, 1) 69%,
+    rgba(46, 97, 147, 1) 76%,
+    rgba(73, 155, 234, 1) 89%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#499bea', GradientType=0 );
+}
+
+div.MuiInputBase-adornedEnd {
+  background-color: aqua;
 }

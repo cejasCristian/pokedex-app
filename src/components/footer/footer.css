@@ -1,11 +1,100 @@
+footer {
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  flex-flow: row wrap;
+}
+
 .img-cont {
   justify-content: center;
   text-align: center;
-  width: 100%;
+  width: 20rem;
   height: auto;
-  background-color: rgba(256, 256, 256, 0.1);
+  margin: auto;
+  border-radius: 2rem;
+  background: rgba(0, 0, 0, 1);
+  background: -moz-linear-gradient(
+    top,
+    rgba(0, 0, 0, 1) 35%,
+    rgba(16, 18, 18, 1) 39%,
+    rgba(212, 228, 239, 1) 87%,
+    rgba(212, 228, 239, 1) 90%
+  );
+  background: -webkit-gradient(
+    left top,
+    left bottom,
+    color-stop(35%, rgba(0, 0, 0, 1)),
+    color-stop(39%, rgba(16, 18, 18, 1)),
+    color-stop(87%, rgba(212, 228, 239, 1)),
+    color-stop(90%, rgba(212, 228, 239, 1))
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 1) 35%,
+    rgba(16, 18, 18, 1) 39%,
+    rgba(212, 228, 239, 1) 87%,
+    rgba(212, 228, 239, 1) 90%
+  );
+  background: -o-linear-gradient(
+    top,
+    rgba(0, 0, 0, 1) 35%,
+    rgba(16, 18, 18, 1) 39%,
+    rgba(212, 228, 239, 1) 87%,
+    rgba(212, 228, 239, 1) 90%
+  );
+  background: -ms-linear-gradient(
+    top,
+    rgba(0, 0, 0, 1) 35%,
+    rgba(16, 18, 18, 1) 39%,
+    rgba(212, 228, 239, 1) 87%,
+    rgba(212, 228, 239, 1) 90%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 35%,
+    rgba(16, 18, 18, 1) 39%,
+    rgba(212, 228, 239, 1) 87%,
+    rgba(212, 228, 239, 1) 90%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#d4e4ef', GradientType=0 );
 }
 
-img.pokephoto {
-  height: 7rem;
+img.pokephoto1 {
+  height: 5rem;
+  animation: shake 2s ease-in-out;
+}
+
+img.pokephoto2 {
+  height: 5rem;
+  padding-left: 0.7rem;
+  animation: shake 2s ease-in-out;
+}
+
+img.pokephoto3 {
+  height: 5rem;
+  animation: shake 2s ease-in-out;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateY(0.4em);
+  }
+  10%,
+  30%,
+  50% {
+    transform: translateY(-0.2em);
+  }
+  70%,
+  100% {
+    transform: translate(0);
+  }
 }
