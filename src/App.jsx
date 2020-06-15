@@ -32,7 +32,7 @@ function App() {
     }
     fetchData();
   }, [dispatch, pokename]);
-
+  
   return (
     <Container>
       <SearchBar />
