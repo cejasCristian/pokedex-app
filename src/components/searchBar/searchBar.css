@@ -8,6 +8,14 @@ input.makeStyles-inputInput-6 {
   width: 20rem;
 }
 
+.makeStyles-search-4 {
+  background-color: #000000;
+}
+
+.makeStyles-search-4:hover {
+  background-color: #000000;
+}
+
 img#pokeball {
   height: 2.2rem;
   transition: 0.8s all;

@@ -4,7 +4,7 @@ footer {
   justify-content: center;
   text-align: center;
   margin: auto;
-  display: flex;
+  display: block;
   flex-flow: row wrap;
 }
 
@@ -60,6 +60,19 @@ footer {
     rgba(212, 228, 239, 1) 90%
   );
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#d4e4ef', GradientType=0 );
+}
+
+@media screen and (max-width: 790px) {
+  .img-cont {
+    margin-top: 23rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .img-cont {
+    margin-left: 6.5rem;
+  }
 }
 
 img.pokephoto1 {

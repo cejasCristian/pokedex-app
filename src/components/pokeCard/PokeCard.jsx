@@ -65,6 +65,7 @@ const PokeCard = () => {
                 type = 'fairy'
                 break;
             default:
+                type = 'dark'
                 break;
         }
 

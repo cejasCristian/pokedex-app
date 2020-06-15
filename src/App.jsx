@@ -5,7 +5,6 @@ import axios from 'axios';
 import SearchBar from './components/searchBar/SearchBar';
 import PokeCard from './components/pokeCard/PokeCard';
 import Footer from './components/footer/Footer';
-import { Container } from '@material-ui/core';
 import { fetchActions, getPokeDataActions } from './redux/actions';
 
 function App() {
@@ -34,11 +33,11 @@ function App() {
   }, [dispatch, pokename]);
   
   return (
-    <Container>
+    <>
       <SearchBar />
       <PokeCard />
       <Footer />
-    </Container>
+    </>
   );
 }
 
