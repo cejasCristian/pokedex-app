@@ -8,6 +8,7 @@ const PokeCard = () => {
 
     const pokeImage = `https://pokeres.bastionbot.org/images/pokemon/${pokemonInfo.id}.png`
 
+    //pokemon type color
     const colorType = () => {
         
         let type= '';
@@ -72,23 +73,28 @@ const PokeCard = () => {
         return type;
     }
 
+    //capitalize de first letter of a word
+    const upperFirst = (string) => {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+      }
+
     return(
         <div className='container'>
             <div className='cards-container'>
                 {(!pokemonInfo.name) ? (
-                    <>
+                    <> 
                         <div className='imgEmpty'>
                             <img src='images/legend.png' alt='pokemon' className='pokemonEmpty-img'/>
                         </div>
                     </>
                 ) : (
-                        <>
+                        <> 
                         <div className='img-container'>
                             <img src={pokeImage} alt='pokemon' id='pokemon-img'/>
                         </div>
                         <div className='data-container'>
                             <div className={colorType()}>
-                                <p>Name: {pokemonInfo.name}</p>
+                                <p>Name: {upperFirst(pokemonInfo.name)}</p>
                             </div>
                             <div className={colorType()}>
                                 <p>ID: {pokemonInfo.id}</p>
@@ -103,10 +109,10 @@ const PokeCard = () => {
                                 <p>Height: {pokemonInfo.height/10} m</p>
                             </div>
                             <div className={colorType()}>
-                                <p>Ability: {pokemonInfo.abilities[0].ability.name}</p>
+                                <p>Ability: {upperFirst(pokemonInfo.abilities[0].ability.name)}</p>
                             </div>
                             <div className={colorType()}>
-                                <p>Move: {pokemonInfo.moves[0].move.name}</p>
+                                <p>Move: {upperFirst(pokemonInfo.moves[0].move.name)}</p>
                             </div>
                         </div>
                         </>

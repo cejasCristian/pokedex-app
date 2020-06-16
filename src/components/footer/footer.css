@@ -62,7 +62,7 @@ footer {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#d4e4ef', GradientType=0 );
 }
 
-@media screen and (max-width: 790px) {
+@media screen and (max-width: 760px) {
   .img-cont {
     margin-top: 23rem;
     margin-bottom: 1rem;
@@ -70,6 +70,12 @@ footer {
 }
 
 @media screen and (max-width: 440px) {
+  .img-cont {
+    margin-left: 7.8rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
   .img-cont {
     margin-left: 6.5rem;
   }

@@ -13,7 +13,7 @@ function App() {
   //get pokemon name list of API (only names)
   useEffect(() => {
     async function fetchData() {
-      const result = await axios('https://pokeapi.co/api/v2/pokemon?limit=804');
+      const result = await axios('https://pokeapi.co/api/v2/pokemon?limit=807');
       const data = result.data.results.map((p) => p.name);
       dispatch(fetchActions.setData(data));
     }
@@ -31,7 +31,7 @@ function App() {
     }
     fetchData();
   }, [dispatch, pokename]);
-  
+
   return (
     <>
       <SearchBar />
