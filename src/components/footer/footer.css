@@ -1,11 +1,10 @@
-footer {
-  width: 100%;
-  height: auto;
-  justify-content: center;
-  text-align: center;
-  margin: auto;
-  display: block;
-  flex-flow: row wrap;
+.footer {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+  position: relative;
 }
 
 .img-cont {
@@ -62,22 +61,9 @@ footer {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#d4e4ef', GradientType=0 );
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 380px) {
   .img-cont {
-    margin-top: 23rem;
-    margin-bottom: 1rem;
-  }
-}
-
-@media screen and (max-width: 440px) {
-  .img-cont {
-    margin-left: 7.8rem;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .img-cont {
-    margin-left: 6.5rem;
+    width: 18rem;
   }
 }
 

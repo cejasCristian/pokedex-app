@@ -5,10 +5,13 @@ import axios from 'axios';
 import SearchBar from './components/searchBar/SearchBar';
 import PokeCard from './components/pokeCard/PokeCard';
 import Footer from './components/footer/Footer';
+import { usePromiseTracker, trackPromise } from 'react-promise-tracker';
 import { fetchActions, getPokeDataActions } from './redux/actions';
+import PokeballAnimation from './components/pokeballAnimation/PokeballAnimation';
 
 function App() {
   const dispatch = useDispatch();
+  const { promiseInProgress } = usePromiseTracker();
 
   //get pokemon name list of API (only names)
   useEffect(() => {
@@ -17,25 +20,33 @@ function App() {
       const data = result.data.results.map((p) => p.name);
       dispatch(fetchActions.setData(data));
     }
-    fetchData();
+    trackPromise(fetchData());
   }, [dispatch]);
 
   //set value (pokemon name) from input (search bar component)
-  const pokename = useSelector((state) => state.getName.name );
-  
+  const pokename = useSelector((state) => state.getName.name);
+
   useEffect(() => {
     async function fetchData() {
       const result = await axios(`https://pokeapi.co/api/v2/pokemon/${pokename}`);
+
       const data = result.data;
       dispatch(getPokeDataActions.setPokeData(data));
     }
-    fetchData();
+    trackPromise(fetchData());
   }, [dispatch, pokename]);
 
   return (
     <>
       <SearchBar />
-      <PokeCard />
+      {promiseInProgress !== true ? (
+        <>
+          {' '}
+          <PokeCard />
+        </>
+      ) : (
+        <PokeballAnimation />
+      )}
       <Footer />
     </>
   );

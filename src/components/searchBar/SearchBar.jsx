@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     paddingTop: 3,
-    flexGrow: 0.39,
+    flexGrow: 0.42,
   },
   inputRoot: {
     color: 'inherit',
@@ -59,43 +59,31 @@ const useStyles = makeStyles((theme) => ({
 
 const SearchBar = () => {
   const classes = useStyles();
-
   const dispatch = useDispatch();
 
   const handleChange = (event, value) => {
     dispatch(getNameActions.setName(value));
-  }
+  };
 
   const pokemons = useSelector((state) => state.fetch.pokemon);
 
   return (
     <Container>
-      <div className={classes.root}>
-        <AppBar position='static'>
-          <Toolbar>
-            <Typography variant='h6' className={classes.title}>
-              <img src='images/pokelogo.png' alt='master' id='pokelogo' />
-            </Typography>
-            <div className={classes.search}>
-              <Autocomplete
-                id='combo-box-demo'
-                options={pokemons}
-                getOptionLabel={(pokemons) => pokemons}
-                style={{ width: 300 }}
-                onChange={handleChange}
-                renderInput={(params) => (
-                  <TextField
-                    {...params}
-                    label='Pokemon name...'
-                    variant='outlined'
-                  />
-                )}
-              />
-            </div>
-            <img src='images/pokeball.png' alt='master' id='pokeball' />
-          </Toolbar>
-        </AppBar>
-      </div>
+      {/* <div className={classes.root}> */}
+
+      <AppBar position='static'>
+        <Toolbar>
+          <Typography variant='h6' className={classes.title}>
+            <img src='images/pokelogo.png' alt='master' id='pokelogo' />
+          </Typography>
+          {/* <div className={classes.search}> */}
+          <Autocomplete id='combo-box-demo' options={pokemons} getOptionLabel={(pokemons) => pokemons} style={{ width: 300 }} onChange={handleChange} renderInput={(params) => <TextField {...params} label='Pokemon name...' variant='outlined' />} />
+          {/* </div> */}
+          <img src='images/pokeball.png' alt='master' id='pokeball' />
+        </Toolbar>
+      </AppBar>
+
+      {/* </div> */}
     </Container>
   );
 };

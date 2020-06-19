@@ -1,125 +1,67 @@
 import React from 'react';
 import './pokeCard.css';
 import { useSelector } from 'react-redux';
+import { Container, Grid } from '@material-ui/core';
+import Image from 'material-ui-image';
 
 const PokeCard = () => {
+  const pokemonInfo = useSelector((state) => state.getPokeData.pokeData);
 
-    const pokemonInfo = useSelector((state) => state.getPokeData.pokeData)
+  const pokeImage = `https://pokeres.bastionbot.org/images/pokemon/${pokemonInfo.id}.png`;
 
-    const pokeImage = `https://pokeres.bastionbot.org/images/pokemon/${pokemonInfo.id}.png`
+  //capitalize de first letter of a word
+  const upperFirst = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
 
-    //pokemon type color
-    const colorType = () => {
-        
-        let type= '';
-
-        switch(pokemonInfo.types[0].type.name) {
-            case 'grass':
-                type = 'grass'
-                break;
-            case 'normal':
-                type = 'normal'
-                break;
-            case 'fighting':
-                type = 'fighting'
-                break;
-            case 'flying':
-                type = 'flying'
-                break;
-            case 'poison':
-                type = 'poison'
-                break;
-            case 'rock':
-                type = 'rock'
-                break;
-            case 'bug':
-                type = 'bug'
-                break;
-            case 'ghost':
-                type = 'ghost'
-                break;
-            case 'steel':
-                type = 'steel'
-                break;
-            case 'fire':
-                type = 'fire'
-                break;
-            case 'water':
-                type = 'water'
-                break;
-            case 'electric':
-                type = 'electric'
-                break;
-            case 'psychic':
-                type = 'psychic'
-                break;
-            case 'ice':
-                type = 'ice'
-                break;
-            case 'dragon':
-                type = 'dragon'
-                break;
-            case 'dark':
-                type = 'dark'
-                break;
-            case 'fairy':
-                type = 'fairy'
-                break;
-            default:
-                type = 'dark'
-                break;
-        }
-
-        return type;
-    }
-
-    //capitalize de first letter of a word
-    const upperFirst = (string) => {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-      }
-
-    return(
-        <div className='container'>
-            <div className='cards-container'>
-                {(!pokemonInfo.name) ? (
-                    <> 
-                        <div className='imgEmpty'>
-                            <img src='images/legend.png' alt='pokemon' className='pokemonEmpty-img'/>
-                        </div>
-                    </>
-                ) : (
-                        <> 
-                        <div className='img-container'>
-                            <img src={pokeImage} alt='pokemon' id='pokemon-img'/>
-                        </div>
-                        <div className='data-container'>
-                            <div className={colorType()}>
-                                <p>Name: {upperFirst(pokemonInfo.name)}</p>
-                            </div>
-                            <div className={colorType()}>
-                                <p>ID: {pokemonInfo.id}</p>
-                            </div>
-                            <div className={colorType()}>
-                                <p>Type: {pokemonInfo.types[0].type.name}</p>
-                            </div>
-                            <div className={colorType()}>
-                                <p>Weight: {pokemonInfo.weight/10} kg</p>
-                            </div>
-                            <div className={colorType()}>
-                                <p>Height: {pokemonInfo.height/10} m</p>
-                            </div>
-                            <div className={colorType()}>
-                                <p>Ability: {upperFirst(pokemonInfo.abilities[0].ability.name)}</p>
-                            </div>
-                            <div className={colorType()}>
-                                <p>Move: {upperFirst(pokemonInfo.moves[0].move.name)}</p>
-                            </div>
-                        </div>
-                        </>
-                    )}
-            </div>
-        </div>
-    );
-}
+  return (
+    <Container className='general'>
+      {!pokemonInfo.name ? (
+        <>
+          <Container className='initial-img'>
+            <Image src='images/legend.png' className='pokemonEmpty-img' alt='pokemon' aspectRatio={2.39/1} color='transparent'/>
+          </Container>
+        </>
+      ) : (
+        <>
+          <Container>
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
+                <Grid container justify='center' className='grid-container'>
+                  <Grid className='grid-1'>
+                    <img src={pokeImage} alt='pokemon' id='pokemon-img' />
+                  </Grid>
+                  <Grid>
+                    <div className={pokemonInfo.types[0].type.name}>
+                      <p>Name: {upperFirst(pokemonInfo.name)}</p>
+                    </div>
+                    <div className={pokemonInfo.types[0].type.name}>
+                      <p>ID: {pokemonInfo.id}</p>
+                    </div>
+                    <div className={pokemonInfo.types[0].type.name}>
+                      <p>Type: {pokemonInfo.types[0].type.name}</p>
+                    </div>
+                    <div className={pokemonInfo.types[0].type.name}>
+                      <p>Weight: {pokemonInfo.weight / 10} kg</p>
+                    </div>
+                    <div className={pokemonInfo.types[0].type.name}>
+                      <p>Height: {pokemonInfo.height / 10} m</p>
+                    </div>
+                    <div className={pokemonInfo.types[0].type.name}>
+                      <p>Ability: {upperFirst(pokemonInfo.abilities[0].ability.name)}</p>
+                    </div>
+                    <div className={pokemonInfo.types[0].type.name}>
+                      <p>Move: {upperFirst(pokemonInfo.moves[0].move.name)}</p>
+                    </div>
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Container>
+        </>
+      )}
+    </Container>
+  );
+};
 
 export default PokeCard;
