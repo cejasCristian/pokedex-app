@@ -19,10 +19,17 @@ input.makeStyles-inputInput-6 {
 img#pokeball {
   height: 2.2rem;
   transition: 0.8s all;
+  position: static;
 }
 
 img#pokelogo {
   height: 5rem;
+}
+
+@media screen and (max-width: 750px) {
+  img#pokelogo {
+    display: none;
+  }
 }
 
 img#pokeball:hover {

@@ -13,7 +13,7 @@ function App() {
   const dispatch = useDispatch();
   const { promiseInProgress } = usePromiseTracker();
 
-  //get pokemon name list of API (only names)
+  //get pokemon name list from API (only names)
   useEffect(() => {
     async function fetchData() {
       const result = await axios('https://pokeapi.co/api/v2/pokemon?limit=807');

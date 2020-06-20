@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     paddingTop: 3,
-    flexGrow: 0.42,
+    flexGrow: 0.36,
   },
   inputRoot: {
     color: 'inherit',
@@ -77,7 +77,7 @@ const SearchBar = () => {
             <img src='images/pokelogo.png' alt='master' id='pokelogo' />
           </Typography>
           {/* <div className={classes.search}> */}
-          <Autocomplete id='combo-box-demo' options={pokemons} getOptionLabel={(pokemons) => pokemons} style={{ width: 300 }} onChange={handleChange} renderInput={(params) => <TextField {...params} label='Pokemon name...' variant='outlined' />} />
+          <Autocomplete id='combo-box-demo' options={pokemons} getOptionLabel={(pokemons) => pokemons} style={{ width: 500, paddingTop: 13 }} onChange={handleChange} renderInput={(params) => <TextField {...params} label='Pokemon name...' variant='outlined' />} />
           {/* </div> */}
           <img src='images/pokeball.png' alt='master' id='pokeball' />
         </Toolbar>
