@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./app.css";
+import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import SearchBar from "./components/searchBar/SearchBar";
