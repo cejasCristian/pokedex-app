@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
-import './App.css';
-import { useDispatch, useSelector } from 'react-redux';
-import axios from 'axios';
-import SearchBar from './components/searchBar/SearchBar';
-import PokeCard from './components/pokeCard/PokeCard';
-import Footer from './components/footer/Footer';
-import { usePromiseTracker, trackPromise } from 'react-promise-tracker';
-import { fetchActions, getPokeDataActions } from './redux/actions';
-import PokeballAnimation from './components/pokeballAnimation/PokeballAnimation';
+import React, { useEffect } from "react";
+import "./app.css";
+import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
+import SearchBar from "./components/searchBar/SearchBar";
+import PokeCard from "./components/pokeCard/PokeCard";
+import Footer from "./components/footer/Footer";
+import { usePromiseTracker, trackPromise } from "react-promise-tracker";
+import { fetchActions, getPokeDataActions } from "./redux/actions";
+import PokeballAnimation from "./components/pokeballAnimation/PokeballAnimation";
 
 function App() {
   const dispatch = useDispatch();
@@ -16,8 +16,9 @@ function App() {
   //get pokemon name list from API (only names)
   useEffect(() => {
     async function fetchData() {
-      const result = await axios('https://pokeapi.co/api/v2/pokemon?limit=807');
+      const result = await axios("https://pokeapi.co/api/v2/pokemon?limit=649");
       const data = result.data.results.map((p) => p.name);
+
       dispatch(fetchActions.setData(data));
     }
     trackPromise(fetchData());
@@ -28,7 +29,9 @@ function App() {
 
   useEffect(() => {
     async function fetchData() {
-      const result = await axios(`https://pokeapi.co/api/v2/pokemon/${pokename}`);
+      const result = await axios(
+        `https://pokeapi.co/api/v2/pokemon/${pokename}`
+      );
 
       const data = result.data;
       dispatch(getPokeDataActions.setPokeData(data));
@@ -37,18 +40,18 @@ function App() {
   }, [dispatch, pokename]);
 
   return (
-    <>
+    <div className="hero">
       <SearchBar />
       {promiseInProgress !== true ? (
         <>
-          {' '}
+          {" "}
           <PokeCard />
         </>
       ) : (
         <PokeballAnimation />
       )}
       <Footer />
-    </>
+    </div>
   );
 }
 

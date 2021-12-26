@@ -9,3 +9,24 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 991px) {
+  .hero {
+    overflow: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero {
+    height: auto;
+    min-height: 98vh;
+  }
+}
